@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual seu nome: <input id="nome_aluno">
+    <br>    
+    Qual sua idade: <input id="idade_aluno">
+    <br>
+    <button onclick="avaliar()">Avaliar aluno</button>
+    <br>
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+    function avaliar(){
+        var nome = nome_aluno.value
+        var idade = Number (idade_aluno.value)
+        var porcentagem = (idade / 18 * 100).toFixed(2) 
+
+        if (porcentagem >= 100){
+            resultado.innerHTML = `${nome} vamos tirar a CNH`
+        }else {
+            resultado.innerHTML =`${nome}, você possui ${porcentagem}% da idade necessária para tirar a CNH, vá jogar Playstation!`
+        }
+    }
+</script>

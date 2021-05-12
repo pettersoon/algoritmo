@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <select id="filmes_marvel">
+        <option value="filme_pantera_negra">Pantera Negra</option>
+        <option value="filme_dr_estranho">Dr Estranho</option>
+        <option value="filme_vingadores_ultimato">Avangers Endgame</option>
+    </select>
+    <button onclick="nota()"></button>
+</body>
+</html>
+<script>
+    function nota(){
+        if(filmes_marvel.value == "filme_pantera_negra"){
+        alert("A nota do filme Pantera Negra é 7,3/10")
+        }
+        if(filmes_marvel.value == "filme_dr_estranho"){
+            alert("A nota do filme Dr Estranho é 7,5/10")
+        }
+        if(filmes_marvel.value == "filme_vingadores_ultimato"){
+            alert("A nota do filme Vingadores Ultimato 8,4/10")
+        }
+    }
+</script>
+<br>
+ 

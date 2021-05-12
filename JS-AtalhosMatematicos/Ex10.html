@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="passagens_08()">08 passagens</button>
+    <br>
+    <button onclick="passagens_20()">20 passagens</button>
+    <br>
+    <button onclick="passagens_50()">50 passagens</button>
+</body>
+</html>
+
+<script>
+    function passagens_08(){
+        var quantidade_passagens = 8;
+        var valor_pago = 32.45;
+        var valor_tarifa_cheia = 35.20;
+        var desconto = (1-(valor_pago/ valor_tarifa_cheia))*100;
+        var passagens_bonus = (valor_tarifa_cheia - valor_pago)/ 4.40;
+
+
+        alert(`Ao comprar 8 passagens, você pagou ${desconto}% a menos. É como se tivesse ganhado ${passagens_bonus}  passagens de bônus`)
+    }
+    function passagens_20(){
+        var quantidade_passagens = 20
+        var valor_pago = 78.65;
+        var valor_tarifa_cheia = 88.00;
+        var desconto = (1-(valor_pago/ valor_tarifa_cheia))*100;
+        var passagens_bonus = (valor_tarifa_cheia - valor_pago)/ 4.40;
+
+        alert(`Ao comprar 20 passagens, você pagou ${desconto}% a menos. É como se tivesse ganhado ${passagens_bonus}  passagens de bônus`)
+    }
+    function passagens_50(){
+        var quantidade_passagens = 50
+        var valor_pago = 191.41;
+        var valor_tarifa_cheia = 220.00;
+        var desconto = (1-(valor_pago/ valor_tarifa_cheia))*100;
+        var passagens_bonus = (valor_tarifa_cheia - valor_pago)/ 4.40;
+
+        alert(`Ao comprar 50 passagens, você pagou ${desconto}% a menos. É como se tivesse ganhado ${passagens_bonus}  passagens de bônus`)
+    }
+    
+</script>

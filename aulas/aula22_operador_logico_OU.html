@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Informe a nota do aluno: <input id="in_nota">
+    <br>
+    Informe a frequencia do aluno: <input id="in_frequencia">
+    <br>
+    <button onclick="verificar_situacao()">Verificar situação</button>
+</body>
+
+</html>
+
+<script>
+
+    function verificar_situacao() {
+        var nota = Number(in_nota.value);
+        var frequencia = Number(in_frequencia.value);
+
+        /*
+            O operador lógico OU (OR) fará com que
+            o seu IF (ou ELSE-IF) seja executado
+            quando QUALQUER UMA das condições testadas
+            forem verdadeiras;
+
+            Lembrando que você pode testar mais de 
+            duas condições;
+        */
+        if (nota < 6 || frequencia < 70) {
+            alert("Infelizmente reprovado");
+        } else {
+            alert("Parabéns aprovado");
+        }
+    }
+</script>

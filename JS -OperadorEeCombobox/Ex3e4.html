@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual sua idade: <input id="idade_pessoa">
+    <br>
+    Qual seu peso: <input id="peso_pessoa">
+    <br>
+    <button onclick="verificar()"></button>
+    <br>
+    <div id="resultados"></div>
+</body>
+</html>
+<script>
+    function verificar(){
+        var peso = Number(peso_pessoa.value)
+        var idade = Number(idade_pessoa.value)
+        if(idade > 15 && peso <=100){
+            resultados.innerHTML = `<span style="color: blue;">Você pode brincar!</span>`
+        }else {
+            resultados.innerHTML = `<span style="color: red;">Você não pode brincar!</span>`
+        }
+    }
+</script>

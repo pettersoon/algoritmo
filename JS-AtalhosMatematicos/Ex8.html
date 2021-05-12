@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Valor do carro a vista: <input id="in_valor_carro">
+    <br>
+    Taxa de juros (a.m): <input id="in_taxa_juros">
+    <br>
+    Quantidade de parcelas: <input id="in_qtd_parcelas">
+    <br>
+    <button onclick="calcular_preju()">Calcular Preju</button>
+    <br>
+    <span id="resultado_preju"></span>
+</body>
+
+</html>
+
+<script>
+    function calcular_preju() {
+        var valor_do_carro = Number(in_valor_carro.value);
+        var n = Number(in_qtd_parcelas.value);
+        var a1 = valor_do_carro / n;
+        var q = (Number(in_taxa_juros.value) / 100) + 1;
+        /*
+            a1 = 1° termo
+            n  = número de termos (número de parcelas)
+            q  = razão (a taxa de juros)
+
+            Sn = a1 * (q(elevado)n - 1)
+                    q - 1
+        */
+        var A = (a1 * (q ** n - 1)) / (q - 1);
+        var B = valor_do_carro * 0.8;
+        var C = A / valor_do_carro;
+        resultado_preju.innerHTML = `Seu carro vai sair por um total de R$${A.toFixed(2)}. Após 1 mês, ele já vai valer só R$${B}. Porque comprou financiado, vai pagar o correspondente a ${C.toFixed(2)} carros`;
+    }
+</script>

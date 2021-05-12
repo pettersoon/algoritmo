@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="in_numero">
+    <br>
+    <button onclick="incrementar_simples()">Incrementar (simples)</button>
+    <br>
+    <button onclick="decrementar_simples()">Decrementar (simples)</button>
+    <br>
+    <button onclick="incrementar_avancado()">Incrementar (avançado)</button>
+    <br>
+    <button onclick="decrementar_avancado">Decrementar (avançado)</button>
+    
+</body>
+</html>
+<script>
+    var numero = 0;
+    function incrementar_simples(){
+        // numero = numero + 1;aq vc consegue escolher de quanto em quanto
+        //numero += 1; idem
+        //numero ++;//vai de 1 em 1
+        alert(`O número atual é: ${++numero}`)
+    }
+    function decrementar_simples(){
+        //numero = numero - 1;
+        //numero -= 1;
+        numero --;
+    }
+    function incrementar_avancado(){
+
+    }
+    function decrementar_avancado(){
+
+    }
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        Qual o tempo de cozimento do arroz <input id="cozimento_arroz" placeholder="em minutos">
+        <br>
+        <button onclick="experimentar()">Provar arroz</button>
+        <br>
+        <div id="resultado"></div>
+    </div>
+</body>
+</html>
+<script>
+    function experimentar (){
+        var cozimento = Number(cozimento_arroz.value)
+
+        if(cozimento == 5){
+            resultado.innerHTML = `
+            Parabéns! Arroz perfeito!
+            <br>
+            <img src="https://3.bp.blogspot.com/-EoDapwUDeHo/WfCH-zQFMSI/AAAAAAAABCE/PcXO-PbmAJk9TAPoCLowA82YPYBwgj7nQCLcBGAs/s320/arroz-branco-soltinho-1016-1400x800.jpg">`
+        }
+        else {
+            resultado.innerHTML = `
+            Arroz cru ou queimado!
+            <br>
+            <div style="width: 800px; height: 200px; float: left">            
+            <img style="width: 400px; height: 200px; float: left" src ="https://thumbs.dreamstime.com/z/arroz-cru-13998227.jpg">
+            <img style="width: 400px; height: 200px; float: left" src ="https://culinaria.culturamix.com/blog/wp-content/uploads/2020/06/Arroz-Queimou-1.jpg"
+            </div>`
+
+        }
+    }
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 9</title>
+</head>
+<body>
+    Yasuo <input id="input1"><br>
+    Yone <input id="input2"><br>
+    Brancos <input id="input3"><br>
+    Nulos <input id="input4"><br>
+    <button onclick="result()">Resultado da Eleição</button>
+    <DIV id='grafico'></DIV>
+</body>
+</html>
+
+<script>
+    function result(){
+        var samurai = Number(input1.value);
+        var samurai2 = Number(input2.value);
+        var branco = Number(input3.value);
+        var nulo = Number(input4.value);
+        var total = samurai + samurai2 + branco + nulo;
+        var PC = (100*samurai)/total;
+        var PD = (100*samurai2)/total;
+        var PB = (100*branco)/total;
+        var PN = (100*nulo)/total;
+        grafico.innerHTML=`Total de votos: ${total}<br>
+        YASUO: ${PC}% (${samurai} votos )<br>
+        <div style="background-color: black; width: ${PC}%; height: 30px;"><br></div>
+        YONE: ${PD}% (${samurai2} votos ) <br>
+        <div style="background-color: red; width: ${PD}%; height: 30px;"><br></div>
+        Invalidos: ${PB + PN}% (${branco + nulo} votos)<br>
+        <div style="background-color: green; width: ${PN}%; height: 30px;"><br></div>
+        `;
+    }
+
+</script>

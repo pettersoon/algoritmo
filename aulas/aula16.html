@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Primeiro número<input id="primeiro_numero">
+    <br>
+    Segundo número<input id="segundo_numero">
+    <br>
+    <button onclick="divisao()">Divisão</button>
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+    function divisao(){
+        var num1 = Number(primeiro_numero.value)
+        var num2 = Number(segundo_numero.value)
+        var div = num1 / num2
+
+        resultado.innerHTML = `O resultado de ${num1} dividido por ${num2} é ${div.toFixed(2)}`
+    }
+
+    if (div > 10){
+        resultado.innerHTML += 'Uau, é um número gigante!'
+    } else {
+        resultado.innerHTML += 'É um número pequeno'
+    }
+</script>

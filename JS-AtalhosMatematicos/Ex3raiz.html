@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        Informe um número <input id="numero_1">
+        <br>
+        <div> 
+            <button onclick="raiz_quadrada()">Exibir raiz quadrada</button>
+            <div id="resultado_quadrada"></div>
+        </div>
+        <br>
+        <div>
+            <button onclick="raiz_cubica()">Exibir raiz Cúbica</button>
+            <div id="resultado_cubica"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    var number = 0;
+    function raiz_quadrada(){
+        number = Math.sqrt( Number(numero_1.value)).toFixed(1);       
+         
+        resultado_quadrada.innerHTML = `O numero ${numero_1.value} em raiz quadrada é: ${number}²`
+    }
+
+    function raiz_cubica(){
+        number = Math.cbrt(Number (numero_1.value)).toFixed(1);
+
+        resultado_cubica.innerHTML = `O numero ${numero_1.value} em raiz quadrada é: ${number}³`
+    }
+</script>

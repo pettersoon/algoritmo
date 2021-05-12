@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual a ultima série assistida: <input  Placeholder="Ex: Peaky Blinders" id="serie">
+    Quantia de episódios assistidos: <input id="episodios">
+    <button onclick="verificar()">Verificar nível</button>
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+    function verificar(){
+        var nome = serie.value
+        var eps = Number(episodios.value)
+        var qtdHoras = eps * 22
+
+        resultado.innerHTML = `Vejo que você gosta da série ${nome}`
+
+        if (qtdHoras > 1800){
+            resultado.innerHTML += `<br>Uau, você realmente gosta dessa série!`
+        }
+    }
+</script>

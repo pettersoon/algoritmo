@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Frase<input onkeyup="transformacoes()" id="input_frase">
+    <br>
+    Primeira letra: <span id="span_1_frase"></span>
+    <br>
+    Ultima letra: <span id="span_last_frase"></span>
+</body>
+</html>
+<script>
+    function transformacoes(){
+        var frase = input_frase.value;
+        span_1_frase.innerHTML = frase [0];
+        span_last_frase.innerHTML = frase[frase.length -1];
+
+    }
+</script>

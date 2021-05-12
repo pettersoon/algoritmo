@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe um número <input id="number_1">
+    <br>
+    Informe outro número <input id="number_2">
+    <br>
+    <button onclick="calcular()">Calcular raiz</button>
+    <div id="resultados"></div>
+    
+</body>
+</html>
+<script>
+    function calcular(){
+        var num1 = Number(number_1.value)
+        var num2 = Number(number_2.value)
+        var conta = num1 ** (1/num2)
+
+        resultados.innerHTML =`${num1}^${num2} raiz de ${num1} da ${conta}`
+    }
+</script>

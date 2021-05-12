@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe a bebida:
+    <select name="bebidas" id="in_bebidas">
+        <option value="0">Nenhum</option>
+        <option value="2.00">Água</option>
+        <option value="4.50">Refrigerante</option>
+        <option value="2.89">Cerveja</option>
+    </select>
+    <br>
+    Informe a refeição:
+    <select name="bebidas" id="in_refeicao">
+        <option value="10.99">salada</option>
+        <option value="14.99">Feijoada</option>
+        <option value="12.99">Bife a cavalo</option>
+        <option value="12.99">Peixe frito</option>
+    </select>
+    <br>
+    Qual seu nome: <input id="nome_cliente">
+    <br>
+    <button onclick="calcular()">Calcular total a pagar</button>
+    <br>
+    <div id="resultados"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        resultados.innerHTML = `Olá, ${nome_cliente.value}. Seu almoço vai custar um total de R$${Number (in_bebidas.value) + Number (in_refeicao.value)(2)}`
+
+
+    }  
+</script>

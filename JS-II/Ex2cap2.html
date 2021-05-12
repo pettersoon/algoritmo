@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantia de votos em Zé <input id="input_ze"><br>
+    Quantia de votos em Maria <input id="input_ma"><br>
+    Quantia de votos brancos <input id="input_branco"><br>
+    Quantia de votos nulos <input id="input_nulo"><br>
+    <button onclick="result()">Resultado da eleição</button><br>
+    
+    
+    <div id="resultado_eleicao"> </div>
+
+
+
+    
+</body>
+</html>
+
+<script>
+
+    function result(){
+        var ze = Number(input_ze.value);
+        var ma = Number(input_ma.value);
+        var branco = Number(input_branco.value);
+        var nulo = Number(input_nulo.value);
+        var soma =  (ze + ma + branco + nulo);
+        var ruela = (ze / soma * 100 );
+        var maria =  (ma / soma * 100);
+        var invalidos =  (branco + nulo );
+        var invalidos2 =  (invalidos / soma * 100);
+
+        resultado_eleicao.innerHTML = `
+        <b>Total de votos: </b> ${soma} <br>
+        <b>Zé Ruela :</b>${ruela}% (${ze}) <br>
+        <b>Maria Bigodenha:</b> ${maria}%(${ma})<br>
+        <b>Invalidos:</b> ${invalidos2}% (${invalidos})`
+        
+    }
+</script>

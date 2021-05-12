@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <div id="abertura">
+        Você já clicou 0 vezes
+    </div>
+      <Button onclick="incrementar_numero()">Clique em mim</Button>
+      <br>
+      <div style="color: white;" id="resultado"></div>
+    
+</body>
+</html>
+<script>
+    var numero = 0;
+        
+        function incrementar_numero(){
+            abertura.innerHTML = `Você já clicou ${++numero} vezes!`
+            
+        }
+</script>

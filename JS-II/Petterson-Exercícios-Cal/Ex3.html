@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+    Qual a quantia em metros² <input id="input1">
+    <button onclick="valores()">Fazer orçamento</button>
+    <div id="orçamento"></div>
+
+    <span style="background-color: green;"></span>
+</body>
+</html>
+
+<script>
+    function valores (){
+        var m2 = Number(input1.value);
+        var esme = 9.70 * m2;
+        var ent_esme = esme + 150; 
+        var bata = 8.70 * m2;
+        var ent_bata = bata + 250 ;
+        var sao = 10.70 * m2;
+        var ent_sao = sao + 100;
+
+        
+        orçamento.innerHTML = `Para ${m2} de m2 de grama, nosso orçamento é:<br>
+
+        Grama esmeralda =  R$${esme}  frete = R$ 150,00,  valor total = R$${ent_esme} <br>
+
+        Grama batatais = R$${bata},  frete = R$ 200,00,  valor total = R$${ent_bata} <br>
+        
+        Grama São Carlos = R$${sao},  frete = R$ 100,00,  valor total = R${ent_sao}`
+
+    }
+</script>
+
+

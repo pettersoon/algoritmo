@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite aq <input id="input_frase">
+    <br>
+    <button onclick="repetir_frase()"></button>
+    <br>
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+    function repetir_frase(){
+        var contador = 0;
+        var frase = input_frase.value;    
+        
+        if (frase.length > 0){
+            while(contador <= 7){
+                resultado.innerHTML += frase <br>
+                contador ++;
+            }
+        }else{
+            alert("Mas qual é a frase?")
+        }
+    }
+        
+</script>

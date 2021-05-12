@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe o 1° termo da PG <input id="primeiro_termo">
+    <br>
+    Informe a razão <input id="in_razao">
+    <br>
+    Informe qual termo deseja ver <input id="termo_solicitado">
+    <br>
+    <button onclick="calcular()">Calcular PG</button>
+</body>
+</html>
+<SCRipt>
+    function calcular(){
+        var termo1 = Number(primeiro_termo.value);
+        var razao = Number(in_razao.value);
+        var termo = Number (termo_solicitado.value)
+        var an = termo1 * (razao ** (termo - 1));
+        //an = primeirotermo * razao ** (termo-1)
+        alert(`O ${termo} termo nessa PG será ${an}`)
+    }
+</SCRipt>

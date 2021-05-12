@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual sua frequência<input id="frequencia_aluno">
+    <button onclick="analise()">Analisar frequência</button>
+    <div id="resultado"></div>
+    
+</body>
+</html>
+<script>
+    function analise(){
+        var frequencia = Number (frequencia_aluno.value)
+
+        if(frequencia >= 50){
+            resultado.innerHTML ='<img src="https://static.quizur.com/i/b/5747891e74cc93.67717206pessoas-inteligentes.jpg" >'
+        } else {
+            resultado.innerHTML ='<img src="http://4.bp.blogspot.com/-nHOfFx4clt0/T7VaH0BfFjI/AAAAAAAAAkI/I0ZJSTzGjlo/s320/turista+3.png">'
+        }
+
+    }
+</script>

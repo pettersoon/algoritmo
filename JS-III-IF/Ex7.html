@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantia de latas de refri2</title>
+</head>
+<body>
+    Quantidade de latas por dia <input id="qtdLatas">
+    <button onclick="Qrefri()">Quantos refris?</button>
+    <div id="resultado"></div>
+    
+</body>
+</html>
+<script>
+    function Qrefri (){
+        var latas = Number(qtdLatas.value);
+        var qtd_latas_anual = latas * 365;
+        
+        resultado.innerHTML =`Quantidade de latinhas: ${qtd_latas_anual}`
+        
+        
+        if ( qtd_latas_anual >= 500) {
+            resultado.innerHTML += `<span style="color: white;background-color: red;">Cuidado com a diabetes!</span>`
+        }
+
+    }
+</script>

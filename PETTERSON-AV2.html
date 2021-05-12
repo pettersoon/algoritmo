@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliaçãp2</title>
+</head>
+
+<body>
+
+
+    Nome do Atleta: <input id="nome_id">
+
+    <br> 
+
+    Idade do Atleta: <input id="idade_id"><br>
+    <select id="esportes">
+        <option value=corrida_id>Correr</option>
+        <option value=nadar_id>Nadar</option>
+        <option value=pedalar_id>Pedalar</option>
+   </select>
+
+
+
+   <br>
+   <button onclick="praticar()">Pratricar esporte</button>
+
+   <br>
+    <div>
+
+        <span>Nome do atleta:<b id="nome_do_praticante"></b></span>
+
+        <span>Idade do atleta:<b id="idade_do_praticante"></b></span><br>
+
+        <span>Km correndo: <b id="km_correndo"></b> 
+            <b id="img_corrida"></b>  </span><br>
+
+        <span>Km nadando: <b id="km_nadando"></b>  
+            <b id="img_nadando"></b>  </span><br>
+
+        <span> Km pedalando: <b id="km_pedalando"></b> 
+            <b id="img_pedalando"></b> </span><br>
+
+        <span>Km total: <b id="km_total"></b>   <b></b>  </span><br>
+    </div>
+
+
+    <div id="imagens_das_praticas">
+        <img src="https://image.flaticon.com/icons/png/128/103/103956.png">
+        <img src="https://image.flaticon.com/icons/png/128/124/124212.png">
+        <img src="https://image0.flaticon.com/icons/png/128/94/94203.png">
+    </div>
+
+
+</body>
+
+</html>
+
+
+
+<script>
+    var correndo = 0;
+    var nadando = 0;
+    var pedalando = 0;
+
+    function praticar() {
+        var nome = nome_id.value;
+        var idade = Number(idade_id.value);
+        var modalidade = esportes.value;
+
+
+
+        if (nome.length < 3 || idade < 18 || idade > 80) {
+            alert(`dados inválidos`);
+        } else {
+            nome_do_praticante.innerHTML = `${nome} -`
+            idade_atleta.innerHTML = `${idade} anos`
+            if (modalidade == "corrida_id") {
+                var val_corrida = 1.5;
+                correndo += val_corrida;
+                km_correndo.innerHTML = `${correndo.toFixed(1)}  `;
+            } else if (modalidade == "nadar_id") {
+                var val_nadar = 1.5;
+                nadando += val_nadar;
+                km_nadando.innerHTML = `${nadando.toFixed(1)}  `;
+
+            } else {
+                var val_pedalar = 1.5;
+                pedalando += val_pedalar;
+                km_pedalando.innerHTML = `${pedalando.toFixed(1)}  `;
+            }
+        }
+
+        // calculos //
+        var total = correndo + nadando + pedalando;
+        
+        var porcentagem_corrida = (correndo * 100) / total
+            var porcentagem_nadando = (nadando * 100) / total
+                var porcentagem_pedalando = (pedalando * 100) / total
+        
+        var porcentagem_img_corrida = (porcentagem_corrida * 300) / 100;
+            var porcentagem_img_nadando = (porcentagem_nadando * 300) / 100;
+                var porcentagem_img_pedalando = (porcentagem_pedalando * 300) / 100;
+
+
+        km_total.innerHTML = `${total}`;
+        img_corrida.innerHTML = `(${porcentagem_corrida.toFixed(2)}%)`;
+        img_nadando.innerHTML = `(${porcentagem_nadando.toFixed(2)}%)`;
+        img_pedalando.innerHTML = `(${porcentagem_pedalando.toFixed(2)}%)`;
+
+        imagens_das_praticas.innerHTML = `<img style="width: ${porcentagem_img_corrida}px" src="https://image.flaticon.com/icons/png/128/103/103956.png">
+                                          <img style="width: ${porcentagem_img_nadando}px" src="https://image.flaticon.com/icons/png/128/124/124212.png">
+                                          <img style="width: ${porcentagem_img_pedalando}px" src="https://image0.flaticon.com/icons/png/128/94/94203.png">`;
+    }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguro carro</title>
+</head>
+<body>
+    Quantidade de infrações <input id="infracoes">
+    <br>
+    Valor do veiculo <input id="valor_veiculo">
+    <br>
+    <button onclick="calSeg()">Calcular Seguro</button>
+    <br>
+    
+</body>
+</html>
+<script>
+    function calSeg (){
+        var infra = Number(infracoes.value)
+        var car = Number (valor_veiculo.value)
+        var valorSeg = car * 0.015;
+
+        if (infra < 3) {
+            valorSeg = valorSeg * 0.9 ;
+           
+        }
+
+        alert(`O valor do seu seguro será: ${valorSeg}`)
+
+        
+    
+    }
+</script>

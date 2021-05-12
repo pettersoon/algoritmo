@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <div id="car" style="background-color: red;"></div>
+        <div id="leg" style="color: yellow;background-color: black;"></div>
+        <div id="fru" style="background-color: white;color: green;"></div>
+   
+    
+    
+    <button onclick="carnes ()">Carnes</button>
+    <button onclick="legumes ()">Legumes</button>
+    <button onclick="frutas ()">Frutas</button>
+</body>
+</html>
+
+<script>
+    function carnes (){
+        car.innerHTML = "Gosto de todos os tipos de carne, menos figado."
+        document.title = "Último clique: Botão de Carnes"
+        car.backgroundcolor = "red"
+        leg.innerHTML = ""
+        fru.innerHTML = ""
+    }
+    function legumes (){
+        leg.innerHTML = "Gosto bastante em pratos mais bem temperados"
+        leg.backgroundcolor = "black"
+        leg.style.color = "yellow"
+        document.title = "Último clique: Botão de legumes"
+        car.innerHTML =""
+        fru.innerHTML = ""
+       
+
+    }
+    function frutas (){
+        document.title = "Último clique: Botão de frutas"
+        fru.innerHTML = "<b>Gosto bastante em pratos de sobremesa ela em si sozinha não sou muito fã</b>"
+        fru.style.color = "green"
+        car.innerHTML = ""
+        leg.innerHTML = ""
+
+    }
+
+</script>

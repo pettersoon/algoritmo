@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Horas de sono: <input id="input_sleep">  <br>  
+    
+    <button onclick="calsono()">Calcular Sono</button> <br>
+
+    <div id="soninho"> </div>
+
+
+
+</body>
+</html>
+
+<script>
+    function calsono(){
+        var sleep = Number(input_sleep.value);
+        var f1 = Number (sleep * 0.05);
+        var f2 = Number (sleep * 0.45);
+        var f3 = Number (sleep * 0.30);
+        var f4 = Number (sleep * 0.20);
+
+        soninho.innerHTML = `Ao dormir ${sleep} <br>  
+        Você dormiu : <br>
+         ${f1} na fase 1 <br>
+         ${f2} na fase 2 <br>
+         ${f3} na fase 3 <br>
+         ${f4} na fase 4 <br>`;         ;
+        
+        }
+</script>

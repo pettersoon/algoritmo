@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual o valor da passagem de ônibus: <input id="input1"><br>
+    Quantia de viagens no mês: <input id="input2"><br>
+    Distância até o trabalho (Km): <input id="input3"><br>
+    <button onclick="cal()">Calcular VT</button><br>
+    <div id="gasto"></div>
+    
+</body>
+</html>
+
+<script>
+    function cal (){
+        var n1 = Number(input1.value) * 0.9;
+        var n2 = Number(input2.value);
+        var n3 = Number(input3.value);
+        var VT = (n1 * n2) * 2 ;
+        var PV = (n1 * n2) * 0.1;  
+        
+        
+        gasto.innerHTML = `Você vai gastar R$${VT} por mês com transporte publico e privado R$${PV}`
+    }
+   //6. Crie um programa em HTML/JS o qual:
+
+//a) Solicite o valor da passagem de ônibus.
+
+//b) Solicite a quantidade de viagens que o usuário faz por mês.
+
+//c) Solicite a distância do trabalho dele até sua casa (em km).
+
+//d) Ao clicar em "Calcular VT" calcule e exiba na tela quanto o usuário gastará por mês com transporte com uma frase como esta:
+
+  // Você vai gastar R$X por mês com transporte.
+
+//*Obs: considere que uma viagem de Uber (99, cabify, etc) custa R$0,75 por km (ou seja, uma viagem de 10km custará R$7,50).
+
+//*Obs: considere que o número de viagens de Uber (99, cabify, etc) que o usuário faz por mês é de 10% do número de viagens de ônibus (ou seja, se ele indicar que faz 50 viagens, considere 45 de ônibus e 5 de transporte de aplicativo).
+</script>

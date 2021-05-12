@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<center>
+
+    <h1>Comparação</h1>
+        <div style="float: center;">
+            <select id="filmes_marvel">
+                <option value="filme_pantera_negra">Pantera Negra</option>
+                <option value="filme_dr_estranho">Dr Estranho</option>
+                <option value="filme_vingadores_ultimato">Avangers Endgame</option>
+            </select>
+            <br>
+            Nota do filme Marvel<input id="nota_marvel">
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <div>
+
+            <select  id="filmes_dc">
+                <option value="filme_batman_CT">BATMAN: O CAVALEIRO DAS TREVAS</option>
+                <option value="filme_coringa">Coringa</option>
+                <option value="filme_aquaman">Aquaman</option>
+                <br>
+            </select>
+            <br>
+            Nota do filme DC<input id="nota_dc">
+        </div>
+    <button onclick="comparar()">Comparar</button>
+</center>
+</body>
+</html>
+<script>
+    
+
+    function comparar(){
+        var marvel = filmes_marvel.value
+        var dc = filmes_marvel.value
+        var nota1 = Number(nota_marvel.value)
+        var nota2 = Number(nota_dc.value)
+                   
+
+
+        alert(`A nota do filme da Marvel ${marvel} foi de ${nota1} e o filme da DC ${dc} e sua nota foi ${nota2} no IMDB`)
+
+        alert(`O filme ${marvel} é ${((nota1/nota2)*100)-100}% superior ao ${dc}`)
+        
+    }
+</script>

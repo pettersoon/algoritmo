@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média da Nota</title>
+</head>
+<body>
+    Insira a primeira nota: <input id="primeiraNota">
+    <br>
+    Insira a segunda nota : <input id="segundaNota">
+    <br>
+    Insira a terceira nota: <input id="terceiraNota">
+    <br>
+    <button onclick="fazercal()" >Analisar desempenho</button>
+    <div id="medianota"></div>
+    
+</body>
+</html>
+<script>
+    function fazercal (){
+        var one = Number (primeiraNota.value)
+        var two = Number (segundaNota.value)
+        var three = Number (terceiraNota.value)
+        var soma = one + two + three
+        var media = soma / 3
+    
+    medianota.innerHTML = `Sua média foi de: ${media}`
+
+
+    if (media > 9.41){
+        medianota.innerHTML += `<br> Parabéns você é fora de série!`
+    }
+        
+}
+</script>

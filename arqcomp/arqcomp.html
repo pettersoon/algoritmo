@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cruzadinha Tecnológica</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    
+    <p>
+      Cruzadinha Tecnológica
+    </p> 
+    
+  <div  class="perguntas">
+
+    1.	O que é responsável por calcular e realizar tarefas determinadas pelo usuário ?  <button onclick="valida_cpu()">Validar</button>
+    <br>
+    2. Qual a sigla de uma linha de controle na eletrônica digital usada para selecionar um dos circuitos integrados dentre vários conectados ao mesmo barramento de computador, geralmente utilizando a lógica de três estados?  <button onclick="valida_cs()">Validar</button>
+    <br>
+    3.	Qual a sigla dada ao circuito digital responsável por operações de adição e booleana AND?  <button onclick="valida_ula()">Validar</button>
+    <br>
+    4.	Qual o nome dado a memória que fica dentro da própria CPU que armazena n bits?  <button onclick="valida_registradores()">Validar</button>
+    <br>
+    5.	Qual a memória e geralmente usada para armazenar a BIOS?  <button onclick="valida_eprom()">Validar</button>
+    <br>
+    6.	Qual o nome dado ao processador que possui 4 núcleos?  <button onclick="valida_quad_core()">Validar</button>
+    <br>
+    7.	Qual o segundo processador nomeado em hierarquia decrescente da Intel?  <button onclick="valida_i7()">Validar</button>
+    <br>
+    8.	Qual memória é um tipo de dispositivo de armazenamento não volátil?  <button onclick="valida_flash()">Validar</button>
+    <br>
+    9. Que dispositivo permite que certos dispositivos de hardware num computador acessem a memória do sistema para leitura e escrita independentemente da CPU?  <button onclick="valida_dma()">Validar</button>
+    <br>
+    10.	Qual tipo de memória permite tanto a leitura como a gravação e regravação de dados.?  <button onclick="valida_ram()">Validar</button>
+    <br>
+    11.	Qual o nome dado ao processador que possui dois núcleos?  <button onclick="valida_dual()">Validar</button>
+    <br>
+    12.	Qual memória é conhecida também como memória auxiliar? (sigla)  <button onclick="valida_memoria_de_massa()">Validar</button>
+    <br>
+    13.	Qual o terceiro processador nomeado em hierarquia descrecente da Intel?  <button onclick="valida_i5()">Validar</button>
+    <br>
+    14. Que sistema de comunicação que transfere dados entre diferentes componentes em um computador ou entre diferentes computadores?  <button onclick="valida_adress_buss()">Validar</button>
+    <br>
+    15.Qual é o barramento de endereço é uma arquitetura de barramento de computador usada para transferir dados entre dispositivos que são identificados pelo endereço de hardware da memória física?  <button onclick="valida_data_buss()">Validar</button>
+    <br>
+    16.Qual memória suas informações são gravadas pelo fabricante uma única vez e após isso não podem ser alteradas ou apagadas, somente acessadas. <button onclick="valida_rom()">Validar</button>
+
+  </div>
+  <br><br><br>
+  <div>
+   
+    <br><br><br>
+
+    <table class="cruzada" >
+      
+      <!-- Linha1 -->
+    <tr>
+        <td>
+          <span class="numero">1 <br> 2 </span>
+          <input id="cpu_0" maxlength="1">
+        </td>
+        <td><input id="cpu_1" maxlength="1"></td>
+        <td>
+          <span class="numero">3</span>
+          <input id="cpu_2" maxlength="1">
+        </td>
+        <td class="area_preta"></td>
+        <td>
+          <span class="numero">4</span>
+          <input id="registradores_0" maxlength="1">
+        </td>
+        <td class="area_preta"></td>
+        <td class="area_preta"></td>   
+    </tr>
+
+      <!-- Linha2 -->
+    <tr>
+        <td><input id="cs_1" maxlength="1"></td>
+        <td class="area_preta"></td>
+        <td><input id="ula_1" maxlength="1"></td>
+        <td class="area_preta"></td>
+        <td>
+          <span class="numero">5</span>
+          <input id="registradores_1" maxlength="1">
+        </td>
+        <td><input id="eprom_1" maxlength="1"></td>
+        <td><input id="eprom_2" maxlength="1"></td>
+        <td><input id="eprom_3" maxlength="1"></td>
+        <td><input id="eprom_4" maxlength="1"></td>
+        
+    </tr>
+      
+    <!-- Linha3 -->
+    <tr>
+        <td class="area_preta"></td> 
+        <td class="area_preta"></td> 
+        <td><input id="ula_2" maxlength="1"></td>
+        <td>
+          <span class="numero">6</span>
+          <input id="quad_core_0" maxlength="1"></td>
+          <td><input id="registradores_2" maxlength="1"></td>
+          <td class="area_preta"></td> 
+          <td class="area_preta"></td> 
+    </tr>
+        
+    <!-- Linha4 -->
+    <tr>
+          <td class="area_preta"></td> 
+          <td class="area_preta"></td> 
+          <td class="area_preta"></td> 
+          <td><input id="quad_core_1" maxlength="1"></td>
+          <td>
+            <span class="numero">7</span>
+            <input id="registradores_3" maxlength="1"></td>
+            <td><input id="i7_1" maxlength="1"></td>
+            <td class="area_preta"></td> 
+    </tr>
+          
+    <!-- Linha5 -->
+     <tr>
+            <td class="area_preta"></td> 
+            <td>
+              <span class="numero">8</span>
+              <input id="flash_0" maxlength="1">
+            </td>
+            <td><input id="flash_1" maxlength="1"></td>
+            <td><input id="quad_core_2" maxlength="1"></td>
+            <td><input id="registradores_4" maxlength="1"></td>
+            <td><input id="flash_4" maxlength="1"></td>
+            <td class="area_preta"></td> 
+            <td>
+              <span class="numero">14</span>
+              <input id="adress_buss_0" maxlength="1">
+            </td>
+            <td><input id="adress_buss_1" maxlength="1"></td>
+            <td><input id="adress_buss_2" maxlength="1"></td>
+            <td><input id="adress_buss_3" maxlength="1"></td>
+            <td><input id="adress_buss_4" maxlength="1"></td>
+            <td><input id="adress_buss_5" maxlength="1"></td>
+            <td class="area_preta"></td> 
+            <td><input id="adress_buss_6" maxlength="1"></td>
+            <td><input id="adress_buss_7" maxlength="1"></td>
+            <td><input id="adress_buss_8" maxlength="1"></td>
+     </tr>
+    
+     <!-- Linha6 -->
+    <tr>
+      <td  class="area_preta"></td> 
+      <td  class="area_preta"></td> 
+      <td  class="area_preta"></td> 
+      <td><input id="quad_core_3" maxlength="1"></td>
+      <td><input id="registradores_5" maxlength="1"></td>
+      <td  class="area_preta"></td> 
+      <td  class="area_preta"></td> 
+    </tr>
+    
+    <!-- Linha7 -->
+    <tr>
+      <td>
+        <span class="numero">9 <br> 15</span>
+        <input id="dma_0" maxlength="1">
+      </td>
+      <td><input id="dma_1" maxlength="1"></td>
+      <td><input id="dma_2" maxlength="1"></td>
+      <td class="area_preta"></td> 
+      <td>
+        <span class="numero">10</span>
+        <input id="registradores_6" maxlength="1">
+      </td>
+      <td><input id="ram_1" maxlength="1"></td>
+      <td><input id="ram_2" maxlength="1"></td>
+    </tr>
+    
+    <!-- Linha8 -->
+    <tr>
+      <td><input id="data_buss_1" maxlength="1"></td>
+      <td  class="area_preta"></td> 
+      <td  class="area_preta"></td> 
+      <td><input id="quad_core_4" maxlength="1"></td>
+      <td><input id="registradores_7" maxlength="1"></td>
+      <td  class="area_preta"></td> 
+      <td  class="area_preta"></td> 
+    </tr>
+    
+    <!-- Linha9 -->
+    <tr>
+      <td><input id="data_buss_2" maxlength="1"></td>
+      <td class="area_preta"></td> 
+      <td class="area_preta"></td> 
+      <td><input id="quad_core_5" maxlength="1"></td>
+      <td>
+        <span class="numero">11</span>
+        <input id="registradores_8" maxlength="1">
+      </td>
+      <td><input id="dual_1" maxlength="1"></td>
+      <td><input id="dual_2" maxlength="1"></td>
+      <td><input id="dual_3" maxlength="1"></td>    
+      <td class="area_preta"></td>
+      <td><input id="dual_4" maxlength="1"></td>
+      <td><input id="dual_5" maxlength="1"></td>
+      <td><input id="dual_6" maxlength="1"></td>
+      <td><input id="dual_7" maxlength="1"></td>
+    </tr>
+    
+    <!-- Linha10 -->
+    <tr>
+      <td><input id="data_buss_3" maxlength="1"></td>
+      <td class="area_preta"></td>
+      <td class="area_preta"></td>
+      <td><input id="quad_core_6" maxlength="1"></td>
+      <td><input id="registradores_9" maxlength="1"></td>
+      <td class="area_preta"></td>
+      <td class="area_preta"></td>
+    </tr>
+    
+    <!-- Linha11 -->
+    <tr>
+      <td class="area_preta"></td>
+      <td class="area_preta"></td>
+      <td class="area_preta"></td>
+      <td><input id="quad_core_7" maxlength="1"></td>
+      <td>
+        <span class="numero">16</span>
+        <input id="registradores_10" maxlength="1"></td>
+      <td><input id="rom_1" maxlength="1"></td>
+      <td>
+        <span class="numero">12</span>
+        <input id="mdm_0" maxlength="1">
+      </td>  
+    </tr>
+    
+    <!-- Linha12 -->
+    <tr>
+      <td><input id="data_buss_4" maxlength="1"></td>
+      <td class="area_preta"></td>
+      <td>
+        <span class="numero">13</span>
+        <input id="i5_0" maxlength="1">
+      </td>
+      <td class="area_preta"></td>
+      <td><input id="registradores_11" maxlength="1"></td>
+      <td class="area_preta"></td>
+      <td><input id="mdm_1" maxlength="1"></td>
+    </tr>
+    
+    <!-- Linha13 -->
+    <tr>
+      <td><input id="data_buss_5" maxlength="1"></td>
+      <td class="area_preta"></td>
+      <td><input id="i5_1" maxlength="1"></td>
+      <td class="area_preta"></td>
+      <td><input id="registradores_12" maxlength="1"></td>
+      <td class="area_preta"></td>
+      <td><input id="mdm_2" maxlength="1"></td>
+    </tr>
+    
+    <!-- Linha14 -->
+    <tr>
+      <td><input id="data_buss_6" maxlength="1"></td>
+    </tr>
+    
+  </table>
+  
+ 
+</div>
+
+</div>
+<br><br><br><br>
+
+
+</body>
+
+
+
+</html>
+
+<script>
+
+  function valida_rom (){
+  var cor_fundo;
+   if  (rom_1.value.toLowerCase() == "o"){
+        cor_fundo = "green";
+
+        }else{
+          cor_fundo = "red";
+        }
+
+      rom_1.style.backgroundColor = cor_fundo; 
+      
+
+  
+  }
+  
+  function valida_memoria_de_massa(){
+   var cor_fundo;
+   if  (mdm_0.value.toLowerCase() == "m" && 
+        mdm_1.value.toLowerCase() == "d" && 
+        mdm_2.value.toLowerCase() == "m"){
+        cor_fundo = "green";
+
+        }else{
+          cor_fundo = "red";
+        }
+
+      mdm_0.style.backgroundColor = cor_fundo;  
+      mdm_1.style.backgroundColor = cor_fundo; 
+      mdm_2.style.backgroundColor = cor_fundo; 
+
+  }
+
+  function valida_adress_buss(){
+    var cor_fundo;
+    if  (adress_buss_0.value.toLowerCase() == "a" && 
+        adress_buss_1.value.toLowerCase() == "d" && 
+        adress_buss_2.value.toLowerCase() == "r" &&
+        adress_buss_3.value.toLowerCase() == "e" && 
+        adress_buss_4.value.toLowerCase() == "s" && 
+        adress_buss_5.value.toLowerCase() == "s" &&
+        adress_buss_6.value.toLowerCase() == "b" &&
+        adress_buss_7.value.toLowerCase() == "u" &&
+        adress_buss_8.value.toLowerCase() == "s" ){
+        cor_fundo = "green";
+
+        }else{
+          cor_fundo = "red";
+        }
+      adress_buss_0.style.backgroundColor = cor_fundo;
+      adress_buss_1.style.backgroundColor = cor_fundo;
+      adress_buss_2.style.backgroundColor = cor_fundo; 
+      adress_buss_3.style.backgroundColor = cor_fundo; 
+      adress_buss_4.style.backgroundColor = cor_fundo; 
+      adress_buss_5.style.backgroundColor = cor_fundo; 
+      adress_buss_6.style.backgroundColor = cor_fundo; 
+      adress_buss_7.style.backgroundColor = cor_fundo; 
+      adress_buss_8.style.backgroundColor = cor_fundo;  
+        
+
+  }
+
+  function valida_data_buss(){
+    var cor_fundo;
+    if  (data_buss_1.value.toLowerCase() == "a" && 
+        data_buss_2.value.toLowerCase() == "t" &&
+        data_buss_3.value.toLowerCase() == "a" && 
+        data_buss_4.value.toLowerCase() == "b" && 
+        data_buss_5.value.toLowerCase() == "u" &&
+        data_buss_6.value.toLowerCase() == "s" ){
+        cor_fundo = "green";
+
+        }else{
+          cor_fundo = "red";
+        }
+      data_buss_1.style.backgroundColor = cor_fundo;
+      data_buss_2.style.backgroundColor = cor_fundo; 
+      data_buss_3.style.backgroundColor = cor_fundo; 
+      data_buss_4.style.backgroundColor = cor_fundo; 
+      data_buss_5.style.backgroundColor = cor_fundo; 
+      data_buss_6.style.backgroundColor = cor_fundo; 
+        
+  }
+
+  function valida_dma(){
+    var cor_fundo;
+    if  (dma_0.value.toLowerCase() == "d" && 
+        dma_1.value.toLowerCase() == "m" && 
+        dma_2.value.toLowerCase() == "a"){
+        cor_fundo = "green";
+
+        }else{
+          cor_fundo = "red";
+        }
+
+      dma_0.style.backgroundColor = cor_fundo;  
+      dma_1.style.backgroundColor = cor_fundo; 
+  }  
+
+  function valida_dual(){
+    var cor_fundo;
+    if  (dual_1.value.toLowerCase() == "u" && 
+        dual_2.value.toLowerCase() == "a" &&
+        dual_3.value.toLowerCase() == "l" && 
+        dual_4.value.toLowerCase() == "c" && 
+        dual_5.value.toLowerCase() == "o" &&
+        dual_6.value.toLowerCase() == "r" &&
+        dual_7.value.toLowerCase() == "e"){
+        cor_fundo = "green";
+
+        }else{
+          cor_fundo = "red";
+        }
+      dual_1.style.backgroundColor = cor_fundo;
+      dual_2.style.backgroundColor = cor_fundo; 
+      dual_3.style.backgroundColor = cor_fundo; 
+      dual_4.style.backgroundColor = cor_fundo; 
+      dual_5.style.backgroundColor = cor_fundo; 
+      dual_6.style.backgroundColor = cor_fundo; 
+      dual_7.style.backgroundColor = cor_fundo;  
+  }
+
+  function valida_i5(){
+    var cor_fundo;
+    if  (i5_0.value.toLowerCase() == "i" && 
+        i5_1.value.toLowerCase() == "5"){
+        cor_fundo = "green";
+
+        }else{
+          cor_fundo = "red";
+        }
+
+      i5_0.style.backgroundColor = cor_fundo;  
+      i5_1.style.backgroundColor = cor_fundo; 
+  }
+
+  function valida_i7(){
+    var cor_fundo;
+    if  (i7_1.value.toLowerCase() == "7"){
+        cor_fundo = "green";
+
+        }else{
+          cor_fundo = "red";
+        }
+
+      i7_1.style.backgroundColor = cor_fundo;   
+  }
+  
+  function valida_ram(){
+    var cor_fundo;
+    if  (ram_1.value.toLowerCase() == "a" && 
+        ram_2.value.toLowerCase() == "m"){
+        cor_fundo = "green";
+
+        }else{
+          cor_fundo = "red";
+        }
+
+      ram_1.style.backgroundColor = cor_fundo;  
+      ram_2.style.backgroundColor = cor_fundo; 
+  }
+
+  function valida_quad_core(){
+    var cor_fundo;
+    if  (quad_core_0.value.toLowerCase() == "q" && 
+        quad_core_1.value.toLowerCase() == "u" && 
+        quad_core_2.value.toLowerCase() == "a" &&
+        quad_core_3.value.toLowerCase() == "d" && 
+        quad_core_4.value.toLowerCase() == "c" && 
+        quad_core_5.value.toLowerCase() == "o" &&
+        quad_core_6.value.toLowerCase() == "r" &&
+        quad_core_7.value.toLowerCase() == "e"){
+        cor_fundo = "green";
+
+        }else{
+          cor_fundo = "red";
+        }
+
+      quad_core_0.style.backgroundColor = cor_fundo; 
+      quad_core_1.style.backgroundColor = cor_fundo;
+      quad_core_2.style.backgroundColor = cor_fundo; 
+      quad_core_3.style.backgroundColor = cor_fundo; 
+      quad_core_4.style.backgroundColor = cor_fundo; 
+      quad_core_5.style.backgroundColor = cor_fundo; 
+      quad_core_6.style.backgroundColor = cor_fundo; 
+      quad_core_7.style.backgroundColor = cor_fundo;  
+  }
+  
+  function valida_flash(){
+    var cor_fundo;
+    if (flash_0.value.toLowerCase() == "f" &&
+        flash_1.value.toLowerCase() == "l" &&
+        flash_4.value.toLowerCase() == "h" ){
+          cor_fundo = "green"
+        }else{
+          cor_fundo = "red"
+        }
+        flash_0.style.backgroundColor = cor_fundo;
+        flash_1.style.backgroundColor = cor_fundo;
+        flash_4.style.backgroundColor = cor_fundo;
+  }
+
+  function valida_cpu(){
+    var cor_fundo;
+    if  (cpu_0.value.toLowerCase() == "c" && 
+        cpu_1.value.toLowerCase() == "p" && 
+        cpu_2.value.toLowerCase() == "u"){
+        cor_fundo = "green";
+
+        }else{
+          cor_fundo = "red";
+        }
+
+      cpu_0.style.backgroundColor = cor_fundo;
+      cpu_1.style.backgroundColor = cor_fundo;  
+      cpu_2.style.backgroundColor = cor_fundo; 
+  }
+
+  function valida_cs(){
+    var cor_fundo;
+    if (cs_1.value.toLowerCase() == "s" ){
+        cor_fundo = "green";
+
+      }else{
+        cor_fundo = "red";
+      }
+      cs_1.style.backgroundColor = cor_fundo; 
+      }
+
+  function valida_ula(){
+    var cor_fundo;
+    if (ula_1.value.toLowerCase() == "l" &&
+        ula_2.value.toLowerCase() == "a" ){
+        cor_fundo = "green";
+
+      }else{
+        cor_fundo = "red";
+      }
+
+      
+      ula_1.style.backgroundColor = cor_fundo; 
+      ula_2.style.backgroundColor = cor_fundo; 
+        
+      }
+
+    function valida_registradores(){
+    var cor_fundo;
+    if (registradores_0.value.toLowerCase() == "r" &&
+        registradores_1.value.toLowerCase() == "e" &&
+        registradores_2.value.toLowerCase() == "g" &&
+        registradores_3.value.toLowerCase() == "i" &&
+        registradores_4.value.toLowerCase() == "s" &&
+        registradores_5.value.toLowerCase() == "t" &&
+        registradores_6.value.toLowerCase() == "r" &&
+        registradores_7.value.toLowerCase() == "a" &&
+        registradores_8.value.toLowerCase() == "d" &&
+        registradores_9.value.toLowerCase() == "o" &&
+        registradores_10.value.toLowerCase() == "r" &&
+        registradores_11.value.toLowerCase() == "e" &&
+        registradores_12.value.toLowerCase() == "s"
+       ){
+        cor_fundo = "green";
+
+      }else{
+        cor_fundo = "red";
+      }
+
+      
+      registradores_0.style.backgroundColor = cor_fundo; 
+      registradores_1.style.backgroundColor = cor_fundo;
+      registradores_2.style.backgroundColor = cor_fundo; 
+      registradores_3.style.backgroundColor = cor_fundo; 
+      registradores_4.style.backgroundColor = cor_fundo; 
+      registradores_5.style.backgroundColor = cor_fundo; 
+      registradores_6.style.backgroundColor = cor_fundo; 
+      registradores_7.style.backgroundColor = cor_fundo; 
+      registradores_8.style.backgroundColor = cor_fundo; 
+      registradores_9.style.backgroundColor = cor_fundo; 
+      registradores_10.style.backgroundColor = cor_fundo; 
+      registradores_11.style.backgroundColor = cor_fundo; 
+      registradores_12.style.backgroundColor = cor_fundo; 
+       
+        
+      }
+
+    function valida_eprom(){
+    var cor_fundo;
+    if (eprom_1.value.toLowerCase() == "p" &&
+        eprom_2.value.toLowerCase() == "r" &&
+        eprom_3.value.toLowerCase() == "o" &&
+        eprom_4.value.toLowerCase() == "m" ){
+        cor_fundo = "green";
+
+      }else{
+        cor_fundo = "red";
+      }
+
+      
+      eprom_1.style.backgroundColor = cor_fundo; 
+      eprom_2.style.backgroundColor = cor_fundo; 
+      eprom_3.style.backgroundColor = cor_fundo; 
+      eprom_4.style.backgroundColor = cor_fundo; 
+        
+      }
+    
+    function valida_dma(){
+    var cor_fundo;
+    if (dma_0.value.toLowerCase() == "d" &&
+        dma_1.value.toLowerCase() == "m" &&
+        dma_2.value.toLowerCase() == "a" ){
+        cor_fundo = "green";
+
+      }else{
+        cor_fundo = "red";
+      }
+
+      dma_0.style.backgroundColor = cor_fundo; 
+      dma_1.style.backgroundColor = cor_fundo; 
+      dma_2.style.backgroundColor = cor_fundo; 
+        
+      }
+
+      
+
+</script>
+
