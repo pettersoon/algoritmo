@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Valor carro a ser financiado: <input id="in_valor_carro">
+    <br>
+    Quantidade parcelas: <input id="in_qtd_parcelas">
+    <br>
+    <button onclick="ver_parcelas()">Ver parcelas</button>
+    <br>
+    <div id="parcelas_container"></div>
+</body>
+
+</html>
+
+<script>
+    function ver_parcelas() {
+        var valor_carro = Number(in_valor_carro.value);
+        var qtd_parcelas = Number(in_qtd_parcelas.value);
+
+        if (valor_carro < 1000) {
+            alert("Valor total inválido");
+        } else if (qtd_parcelas < 6) {
+            alert("Parcelas inválidas");
+        } else {
+            var parcela = 1;
+            var parcela_valor = 0;
+            while (parcela < qtd_parcelas) {
+                if (parcela == 1) {
+                    parcela_valor = valor_carro / qtd_parcelas;
+                } else {
+                    parcela_valor = parcela_valor + (parcela_valor * 0.015);
+                    // parcela_valor = parcela_valor * 1.015;
+                }
+                parcelas_container.innerHTML += `${parcela}° parcela: ${parcela_valor.toFixed(2)}<br>`
+                parcela = parcela + 1;
+                // parcela++ OU ++parcela - Tanto faz;
+            }
+        }
+    }
+</script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nome do filme: <input id="in_filme">
+    <br>
+    <button onclick="cadastrar_filme()">Cadastrar</button>
+    <br>
+    Seu filme favorito: <span id="span_filme_favorito">Ainda não existe</span>
+    <br>
+    Seu 3º filme favorito: <span id="span_terceiro_filme">Ainda não existe</span>
+    <br>
+    Total de filmes cadastrados: <span id="span_total_filmes">0</span>
+</body>
+
+</html>
+
+<script>
+
+    var lista_filmes = [];
+    function cadastrar_filme() {
+        var filme = in_filme.value;
+
+        lista_filmes.push(filme);
+
+        span_filme_favorito.innerHTML = lista_filmes[0];
+
+        if (lista_filmes.length >= 3) {
+            span_terceiro_filme.innerHTML = lista_filmes[2];
+        }
+
+        span_total_filmes.innerHTML = lista_filmes.length;
+
+    }
+
+</script>

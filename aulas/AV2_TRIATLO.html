@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Digite o seu nome: <input id="in_nome">
+    <br>
+    Digite sua idade: <input id="in_idade">
+    <br>
+    <select id="sel_esportes">
+        <option value="0">Selecione a primeira opção</option>
+        <option value="correr">Correr</option>
+        <option value="nadar">Nadar</option>
+        <option value="pedalar">Pedalar</option>
+    </select>
+    <br>
+    <button onclick="verificar()">Praticar esporte</button>
+    <div id="div_nome_idade"></div>
+    <div id="div_tabela_informacoes"></div>
+    <div id="div_imagens_container">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    var km_correndo = 0;
+    var km_nadando = 0;
+    var km_pedalando = 0;
+    var km_total = 0;
+    function verificar() {
+        var nome = in_nome.value;
+        var idade = Number(in_idade.value);
+
+        if (nome.length < 3 || idade < 18 || idade > 80) {
+            alert("Dados inválidos");
+
+        } else {
+            if (sel_esportes.value == "correr") {
+                km_correndo += 1.5;
+                km_total += 1.5;
+            } else if (sel_esportes.value == "nadar") {
+                km_nadando += 1.5;
+                km_total += 1.5;
+            } else {
+                km_pedalando += 1.5;
+                km_total += 1.5;
+            }
+            div_nome_idade.innerHTML = `Atleta: <b>${nome}</b> - Idade: <b>${idade}</b> anos`;
+            var calc_correndo = (km_correndo / km_total) * 100;
+            var calc_nadando = (km_nadando / km_total) * 100;
+            var calc_pedalando = (km_pedalando / km_total) * 100;
+            div_tabela_informacoes.innerHTML = `
+                    Km correndo: ${km_correndo.toFixed(1)} (${calc_correndo.toFixed(2)}%)<br>
+                    Km nadando: ${km_nadando.toFixed(1)} (${calc_nadando.toFixed(2)}%)<br>
+                    Km pedalando: ${km_pedalando.toFixed(1)} (${calc_pedalando.toFixed(2)}%)<br>
+                    <br>
+                    Km total: ${km_total.toFixed(1)}
+            `;
+            var tamanho_imagem_correndo = (300 * calc_correndo) / 100;
+            var tamanho_imagem_nadando = (300 * calc_nadando) / 100;
+            var tamanho_imagem_pedalando = (300 * calc_pedalando) / 100;
+            div_imagens_container.innerHTML = `
+                <img style="width: ${tamanho_imagem_correndo}px" src="https://image.flaticon.com/icons/png/128/103/103956.png" />
+                <img style="width: ${tamanho_imagem_nadando}px" src="https://image.flaticon.com/icons/png/128/124/124212.png" />
+                <img style="width: ${tamanho_imagem_pedalando}px" src="https://image0.flaticon.com/icons/png/128/94/94203.png" />
+            `;
+
+        }
+    }
+</script>

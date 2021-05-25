@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Valor da premiação total: <input id="in_valor_premiacao">
+    <br>
+    Número máximo de rodadas: <input id="in_maximo_rodadas">
+    <br>
+    Resultado time A:
+    <select id="lista_time_A">
+        <option value="3">Vitória</option>
+        <option value="1">Empate</option>
+        <option value="0">Derrota</option>
+    </select>
+    <br>
+    Resultado time B:
+    <select id="lista_time_B">
+        <option value="3">Vitória</option>
+        <option value="1">Empate</option>
+        <option value="0">Derrota</option>
+    </select>
+    <br>
+    Resultado time C:
+    <select id="lista_time_C">
+        <option value="3">Vitória</option>
+        <option value="1">Empate</option>
+        <option value="0">Derrota</option>
+    </select>
+    <br>
+    <button onclick="realizar_rodada()">Realizar rodada</button>
+    <button onclick="revelar_premiacao()">Revelar premiação</button>
+    <span id="span_rodada_atual"></span>
+    <div id="pontuacao_times_container"></div>
+    <div id="premiacao_times_container"></div>
+</body>
+
+</html>
+
+<script>
+
+    var pontuacao_time_A = 0;
+    var pontuacao_time_B = 0;
+    var pontuacao_time_C = 0;
+    var rodada_atual = 0;
+    function realizar_rodada() {
+        var valor_premiacao_total = Number(in_valor_premiacao.value);
+        var numero_maximo_rodadas = Number(in_maximo_rodadas.value);
+        if (valor_premiacao_total >= 1000 && numero_maximo_rodadas > 0) {
+            span_rodada_atual.innerHTML = `Rodada atual: ${++rodada_atual}`;
+            pontuacao_time_A += Number(lista_time_A.value);
+            pontuacao_time_B += Number(lista_time_B.value);
+            pontuacao_time_C += Number(lista_time_C.value);
+
+            pontuacao_times_container.innerHTML = `
+                Time A: ${pontuacao_time_A}<br>
+                Time B: ${pontuacao_time_B}<br>
+                Time C: ${pontuacao_time_C}
+            `;
+            if (rodada_atual == numero_maximo_rodadas) {
+                revelar_premiacao();
+            }
+        } else {
+            alert("Dados inválidos para a rodada");
+        }
+    }
+
+    /*
+        somatoria_pontos - 100%
+        pontuacao_time_A -  X%
+        somatoria_pontos * X = pontuacao_timeA * 100;
+        X = (pontuacao_timeA * 100) / somatoria_pontos;
+    */
+    function revelar_premiacao() {
+        var valor_premiacao_total = Number(in_valor_premiacao.value);
+        var somatoria_pontos = pontuacao_time_A + pontuacao_time_B + pontuacao_time_C;
+        var premiacao_time_A = (pontuacao_time_A / somatoria_pontos) * valor_premiacao_total;
+        var porcentagem_pontos_time_B = (pontuacao_time_B * 100) / somatoria_pontos;
+        /*
+                     100%             - valor_premiacao_total
+            porcentagem_pontos_time_A -         X
+            100 * X = valor_premiacao_total * porcentagem_pontos_time_A
+                  X = (valor_premiacao_total * porcentagem_pontos_time_A) / 100;
+        */
+        var premiacao_time_B = (valor_premiacao_total * porcentagem_pontos_time_B) / 100;
+        /*
+             pontuacao_time_C = 10;
+             somatoria_pontos = 30;
+             10 / 30 = 0.3;
+             0.3 * 1000 = 300;
+        */
+        var premiacao_time_C = (pontuacao_time_C / somatoria_pontos) * valor_premiacao_total;
+
+        premiacao_times_container.innerHTML = `
+            Time A: ${premiacao_time_A.toFixed(2)}<br>
+            Time B: ${premiacao_time_B.toFixed(2)}<br>
+            Time C: ${premiacao_time_C.toFixed(2)}
+        `;
+    }
+</script>

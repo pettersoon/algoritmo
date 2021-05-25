@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Informe a frase: <input id="in_frase">
+    <br>
+    <button onclick="filosofar()">Filosofar</button>
+    <br>
+    <div id="div_frase"></div>
+</body>
+
+</html>
+
+<script>
+    function filosofar() {
+        var frase = in_frase.value;
+        if (frase == "") {
+            alert("Mas e a frase ?");
+        } else {
+            var repetidor = 0;
+            while (repetidor < 7) {
+                div_frase.innerHTML += ++repetidor;
+                div_frase.innerHTML += "<br>";
+            }
+        }
+    }
+</script>

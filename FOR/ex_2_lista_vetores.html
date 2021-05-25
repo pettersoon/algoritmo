@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nome do local: <input id="in_nome_local">
+    <br>
+    <button onclick="cadastrar_local()">Cadastrar local</button>
+    <br>
+    Local para onde viajou: <input id="in_viagem_escolhida" min="1" type="number">
+    <br>
+    <button onclick="relembrar_viagem()">Relembrar viagem</button>
+    <span id="span_exibe_local"></span>
+</body>
+
+</html>
+
+<script>
+    var lista_locais = [];
+    function cadastrar_local() {
+        lista_locais.push(in_nome_local.value);
+    }
+
+    function relembrar_viagem() {
+        var viagem_escolhida = Number(in_viagem_escolhida.value);
+
+        if (viagem_escolhida > lista_locais.length) {
+            span_exibe_local.innerHTML = `Você não fez uma ${viagem_escolhida}ª viagem!`;
+        } else {
+            span_exibe_local.innerHTML = lista_locais[viagem_escolhida - 1];
+        }
+    }
+</script>

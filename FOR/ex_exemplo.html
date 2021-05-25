@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nome aluno: <input id="in_nome_aluno">
+    <br>
+    <button onclick="cadastrarAluno()">Cadastrar e exibir lista</button>
+    <br>
+    <div id="div_lista_alunos"></div>
+    <br>
+    <br>
+    <div id="div_lista_alunos_par"></div>
+    <br>
+    <br>
+    <div id="div_lista_alunos_inversa"></div>
+</body>
+
+</html>
+
+<script>
+
+    var lista_alunos = [];
+    function cadastrarAluno() {
+        lista_alunos.push(in_nome_aluno.value);
+        mostrarAlunosDaLista();
+    }
+
+    function mostrarAlunosDaLista() {
+        div_lista_alunos.innerHTML = "";
+        for (var contador = 0; contador < lista_alunos.length; contador++) {
+            div_lista_alunos.innerHTML += `${lista_alunos[contador]}<br>`;
+        }
+        mostrarAlunosPosicaoPar();
+    }
+
+    function mostrarAlunosPosicaoPar() {
+        div_lista_alunos_par.innerHTML = "";
+        for (var contador = 0; contador < lista_alunos.length; contador++) {
+            if (contador % 2 == 0) {
+                div_lista_alunos_par.innerHTML += `${lista_alunos[contador]}<br>`;
+            }
+        }
+        mostrarAlunosDaListaOrdemInversa();
+    }
+
+    function mostrarAlunosDaListaOrdemInversa() {
+        div_lista_alunos_inversa.innerHTML = "";
+        for (var contador = lista_alunos.length - 1; contador >= 0; contador--) {
+            div_lista_alunos_inversa.innerHTML += `${lista_alunos[contador]}<br>`;
+        }
+    }
+</script>

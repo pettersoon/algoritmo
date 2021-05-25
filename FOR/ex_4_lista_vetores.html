@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nome do filme: <input id="in_filme">
+    <br>
+    <button onclick="cadastrar_filme()">Cadastrar filme</button>
+    <br>
+    <div id="div_lista_filmes"></div>
+</body>
+
+</html>
+
+<script>
+
+    var lista_filmes = [];
+    function cadastrar_filme() {
+        lista_filmes.push(in_filme.value);
+
+        var contador = 0;
+        div_lista_filmes.innerHTML = "";
+        while (contador < lista_filmes.length) {
+
+            var cor = "blue";
+            if (contador % 2 == 0) {
+                cor = "red";
+            }
+
+            div_lista_filmes.innerHTML += `<span style="color: ${cor}">${lista_filmes[contador]}</span><br>`;
+            contador++;
+        }
+    }
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Fruta: <input id="in_fruta">
+    <br>
+    <button onclick="adicionar_fruta()">Adicionar fruta</button>
+    <button onclick="ver_nota_fiscal()">Ver nota fiscal</button>
+    <div id="div_lista_frutas">
+
+    </div>
+
+    <div id="nota_fiscal">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+
+
+    var lista_frutas = [];
+    function adicionar_fruta() {
+        lista_frutas.push(in_fruta.value);
+        div_lista_frutas.style.display = 'block';
+        div_lista_frutas.innerHTML = "";
+        for (var contador = 0; contador < lista_frutas.length; contador++) {
+            div_lista_frutas.innerHTML += `${contador + 1}° ${lista_frutas[contador]}<br>`;
+        }
+    }
+
+    function ver_nota_fiscal() {
+        lista_frutas.style.display = 'none';
+        nota_fiscal.innerHTML = `
+            Primeira fruta: ${lista_frutas[0]}<br>
+            Última fruta: ${lista_frutas[lista_frutas.length - 1]}<br>
+            Qtd frutas: ${lista_frutas.length}<br>
+            Total: ${lista_frutas.length * 2.50}
+        `;
+    }
+</script>

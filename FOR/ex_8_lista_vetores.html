@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Informe a nota: <input id="in_nota_aluno">
+    <br>
+    <button onclick="cadastrar_nota()">Cadastrar nota</button>
+    <br>
+    Nota mínimo: <input id="in_nota_minimo">
+    Nota máximo: <input id="in_nota_maximo">
+    <br>
+    <button onclick="rever_notas()">Rever notas</button>
+    <br>
+    <span id="span_mensagem"></span>
+</body>
+
+</html>
+
+<script>
+
+    var lista_notas = [];
+    function cadastrar_nota() {
+        var nota = Number(in_nota_aluno.value);
+        lista_notas.push(nota);
+    }
+
+    function rever_notas() {
+        var nota_minimo = Number(in_nota_minimo.value);
+        var nota_maximo = Number(in_nota_maximo.value);
+
+        var lista_notas_no_intervalo = [];
+        for (var contador = 0; contador < lista_notas.length; contador++) {
+            var nota_atual = lista_notas[contador];
+            if (nota_atual >= nota_minimo && nota_atual <= nota_maximo) {
+                lista_notas_no_intervalo.push(nota_atual);
+            }
+        }
+
+        var acumulador = 0;
+        for (var contador = 0; contador < lista_notas_no_intervalo.length; contador++) {
+            acumulador += lista_notas_no_intervalo[contador];
+        }
+
+        var media = acumulador / lista_notas_no_intervalo.length;
+
+        span_mensagem.innerHTML = `Foram cadastradas ${lista_notas_no_intervalo.length} notas que estão no intervalo de  ${nota_minimo} até ${nota_maximo} e a média dessas notas é ${media}`;
+    }
+
+    function rever_notas() {
+        var nota_minimo = Number(in_nota_minimo.value);
+        var nota_maximo = Number(in_nota_maximo.value);
+
+        var notas_no_intervalo = 0;
+        var acumulador = 0;
+        for (var contador = 0; contador < lista_notas.length; contador++) {
+            var nota_atual = lista_notas[contador];
+            if (nota_atual >= nota_minimo && nota_atual <= nota_maximo) {
+                notas_no_intervalo++;
+                acumulador += nota_atual;
+            }
+        }
+
+        var media = acumulador / notas_no_intervalo;
+
+        span_mensagem.innerHTML = `Foram cadastradas ${notas_no_intervalo} notas que estão no intervalo de  ${nota_minimo} até ${nota_maximo} e a média dessas notas é ${media}`;
+    }
+</script>

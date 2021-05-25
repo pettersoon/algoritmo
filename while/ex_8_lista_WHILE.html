@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Quantos em quantos dias faz musculação: <input id="in_dias_musculacao">
+    <br>
+    <button onclick="ver_rotina_mensal()">Exibir rotina mensal</button>
+    <br>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+
+<script>
+    // function ver_rotina_mensal() {
+    //     var dia_atual = 1;
+    //     var deve_fazer_musculacao = Number(in_dias_musculacao.value);
+    //     var dias_sem_musculacao = 1;
+    //     while (dia_atual <= 30) {
+    //         if (dia_atual == 1 || dias_sem_musculacao == deve_fazer_musculacao) {
+    //             div_mensagem.innerHTML += `Dia ${dia_atual} - <b>Musculação</b><br>`;
+    //             dias_sem_musculacao = 1;
+    //         } else {
+    //             div_mensagem.innerHTML += `Dia ${dia_atual} - Comer, dormir, etc...<br>`;
+    //             dias_sem_musculacao++;
+    //         }
+    //         dia_atual++;
+    //     }
+    // }
+
+    function ver_rotina_mensal() {
+        var dia_atual = 1;
+        var deve_fazer_musculacao = Number(in_dias_musculacao.value);
+        while (dia_atual <= 30) {
+            var exibir_musculacao = dia_atual % deve_fazer_musculacao == 1;
+            if (exibir_musculacao) {
+                div_mensagem.innerHTML += `Dia ${dia_atual} - <b>Musculação</b><br>`;
+            } else {
+                div_mensagem.innerHTML += `Dia ${dia_atual} - Comer, dormir, etc...<br>`;
+            }
+            dia_atual++;
+        }
+    }
+</script>

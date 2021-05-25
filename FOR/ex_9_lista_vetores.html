@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Linha de ônibus: <input id="in_linha_onibus">
+    <br>
+    <button onclick="cadastrarLinha()">Gravar buzão</button>
+    <button onclick="pesquisarLinha()">Pesquisar linha</button>
+    <br>
+    <div id="div_lista_linhas"></div>
+    <br>
+    <div id="div_lista_ocorrencias"></div>
+</body>
+
+</html>
+
+<script>
+
+    var listaLinhasOnibus = [];
+    function cadastrarLinha() {
+        listaLinhasOnibus.push(in_linha_onibus.value);
+        mostrarListaLinhas();
+    }
+
+    function mostrarListaLinhas() {
+        div_lista_linhas.innerHTML = "";
+        for(var contador = 0; contador < listaLinhasOnibus.length; contador++) {
+            var linhaOnibus = listaLinhasOnibus[contador];
+            div_lista_linhas.innerHTML += `${linhaOnibus}<br>`;
+        }
+    }
+
+    function pesquisarLinha(){
+        var listaDeOcorrencias = [];
+        var linhaPesquisada = in_linha_onibus.value;
+        for(var contador = 0; contador < listaLinhasOnibus.length;) {
+            var linhaOnibus = listaLinhasOnibus[contador++];
+            if(linhaOnibus.toLowerCase() == linhaPesquisada.toLowerCase()) {
+                listaDeOcorrencias.push(contador);
+            }
+        }
+
+        var numeroDeOcorrencias = listaDeOcorrencias.length;
+        if(numeroDeOcorrencias == 0) {
+            div_lista_ocorrencias.innerHTML = "Você nunca pegou essa linha";
+        } else {
+            div_lista_ocorrencias.innerHTML = `Você já pegou essa linha ${numeroDeOcorrencias} vezes, nessa ordem: ${listaDeOcorrencias}`;
+        }
+    }
+</script>
