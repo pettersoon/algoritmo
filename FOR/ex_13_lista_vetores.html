@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nome do produto:
+    <input id="nome_produto">
+    <br> Preço de compra:
+    <input id="preco_compra">
+    <br>
+    <button onclick="cadastrar()">cadastrar</button>
+    <br>
+    <button onclick="relatorio()">Relatório de estoque</button>
+    <br>
+    <div id="resultado2"></div>
+    <div id="resultado"></div>
+    <div id="resultado3"></div>
+</body>
+
+</html>
+<script>
+    var lista_nome_produto = [];
+    var lista_preco_produto = [];
+
+    function cadastrar() {
+        lista_nome_produto.push(nome_produto.value);
+        lista_preco_produto.push(parseInt(preco_compra.value));
+
+    }
+
+    function relatorio() {
+        resultado.innerHTML = "";
+        var somatoria = 0;
+        for (var contador = 0; contador < lista_nome_produto.length; contador++) {
+            var valor_para_compra = lista_preco_produto[contador] * 1.25;
+            resultado2.innerHTML = `Total de produtos: ${lista_nome_produto.length}`;
+            resultado.innerHTML += `
+            Produto ${contador + 1}: ${lista_nome_produto[contador]}
+            <br>
+            Preço de compra: R$ ${lista_preco_produto[contador]}. Vender por R$ ${valor_para_compra.toFixed(2)}<br>
+            `;
+
+            somatoria += lista_preco_produto[contador];
+        }
+        var produto_mais_caro = 0;
+        var produto_mais_barato = lista_preco_produto[0];
+
+        for (var contador = 0; contador < lista_preco_produto.length; contador++) {
+            var numero = lista_preco_produto[contador];
+            if (numero > produto_mais_caro) {
+                produto_mais_caro = numero;
+            }
+            if (numero < produto_mais_barato) {
+                produto_mais_barato = numero;
+            }
+        }
+
+        var media_precos = somatoria / lista_preco_produto.length;
+
+        resultado3.innerHTML = `<br><br>
+                                Produto mais caro: ${produto_mais_caro}<br>
+                                Produto mais barato: ${produto_mais_barato}<br>
+                                Soma dos preços: ${somatoria}<br>
+                                Media dos preços: ${media_precos}<br>
+                                `
+    }
+</script>
